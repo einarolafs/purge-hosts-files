@@ -1,14 +1,10 @@
 <?php 
 
-	header("content-type:application/json");
+	header('content-type:application/json');
 	error_reporting(E_ALL);
 	ini_set('display_errors',1);
 
-	$HostFiles = array(
-		'adaway.org' => 'https://adaway.org/hosts.txt',
-		'winhelp2002.mvps.org' => 'http://winhelp2002.mvps.org/hosts.txt' 
-
-	);
+	$HostFiles = includes('config.php');
 
 	function remove_hashtags($string){
 	    return str_replace('#', '', 
